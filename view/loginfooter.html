@@ -1,0 +1,20 @@
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script type="text/javascript">
+function onSignIn(googleUser) {
+	$('.googleauth-modal').modal({
+		backdrop: 'static',
+		keyboard: false,
+		show: true
+	});
+	$.post('{{ @BASE }}/googleauth', {
+		token: googleUser.getAuthResponse().id_token
+	}, function(data) {
+		if(data.error) {
+			alert(data.error);
+			$('.googleauth-modal').modal('hide');
+		} else {
+			window.location = $('form input[name="to"]').val();
+		}
+	}, 'json');
+}
+</script>

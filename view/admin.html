@@ -1,0 +1,14 @@
+<form action="{{ @BASE . @PATH }}" method="post">
+	<p>Enter your Google APIs Client ID to enable Google Authentication.</p>
+	<div class="form-group">
+		<label for="input-client-id">Client ID</label>
+		<input type="text" class="form-control input-sm" id="input-client-id" name="client_id" value="{{ @site.plugins.googleauth.client_id }}">
+	</div>
+	<button class="btn btn-primary btn-sm" type="submit">Save</button>
+	<check if="{{ @POST.client_id }}">
+		&ensp;
+		<span class="text-success">
+			<span class="fa fa-check"></span>&ensp;Changes saved successfully
+		</span>
+	</check>
+</form>

@@ -1,0 +1,21 @@
+<meta name="google-signin-client_id" content="{{ @site.plugins.googleauth.client_id }}">
+
+<div class="row">
+	<div class="col-md-8 col-md-offset-4">
+		<hr><br>
+		<div class="g-signin2" data-theme="dark" data-width="200" data-longtitle="true" data-onsuccess="onSignIn"></div>
+	</div>
+</div>
+
+<div class="modal googleauth-modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Sign In with Google</h4>
+			</div>
+			<div class="modal-body">
+				<p>Signing in with your Google Account&hellip;</p>
+			</div>
+		</div>
+	</div>
+</div>
